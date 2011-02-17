@@ -55,15 +55,10 @@ Class used to create a cache. Defaults to L<CHI|CHI>.
 
 =item cache
 
-Returns a new cache object with the namespace set to L<cache_namespace>.
+Returns a new cache object with the namespace set to the component's path.
 Parameters to this method, if any, are combined with L<cache_defaults> and
 passed to the L<cache_root_class> constructor.  The cache object is memoized
 when no parameters are passed.
-
-=item cache_namespace
-
-The cache namespace to use. Defaults to the component's
-L<path|Mason::Component::ClassMeta/path>.
 
 =back
 
