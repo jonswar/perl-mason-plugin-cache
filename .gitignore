@@ -9,5 +9,6 @@ data
 docs
 dist
 inc
+release
 tmp
 z-backup
