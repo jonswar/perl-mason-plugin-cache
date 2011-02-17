@@ -10,7 +10,7 @@ __END__
 
 =head1 NAME
 
-Mason::Plugin::Cache - Provide a cache object to each component
+Mason::Plugin::Cache - Provide component cache object and filter
 
 =head1 SYNOPSIS
 
