@@ -78,3 +78,27 @@ any, are passed to C<< $self->cache >>.
     </%>
 
 =back
+
+=head1 SUPPORT
+
+The mailing list for Mason and Mason plugins is
+L<mason-users@lists.sourceforge.net>. You must be subscribed to send a message.
+To subscribe, visit
+L<https://lists.sourceforge.net/lists/listinfo/mason-users>.
+
+You can also visit us at C<#mason> on L<irc://irc.perl.org/#mason>.
+
+Bugs and feature requests will be tracked at RT:
+
+    http://rt.cpan.org/NoAuth/Bugs.html?Dist=Mason-Plugin-Cache
+    bug-mason-plugin-cache@rt.cpan.org
+
+The latest source code can be browsed and fetched at:
+
+    http://github.com/jonswar/perl-mason-plugin-cache
+    git clone git://github.com/jonswar/perl-mason-plugin-cache.git
+
+=head1 SEE ALSO
+
+L<Mason|Mason>
+
