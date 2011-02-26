@@ -4,6 +4,8 @@ Revision history for Mason-Plugin-Cache
 
 0.02  Feb 16, 2011
 
+- Depend on Catalyst::Action::RenderView for tests
+
 0.01  Feb 16, 2011
 
 - Initial version
