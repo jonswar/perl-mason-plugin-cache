@@ -4,6 +4,8 @@ Revision history for Mason-Plugin-Cache
 
 0.02  Feb 25, 2011
 
+- Use new default file extensions in tests
+
 0.01  Feb 16, 2011
 
 - Initial version
