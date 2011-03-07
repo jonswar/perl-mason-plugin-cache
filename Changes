@@ -2,6 +2,8 @@ Revision history for Mason-Plugin-Cache
 
 ** denotes an incompatible change
 
+0.03  Mar 6, 2011
+
 0.02  Mar 6, 2011
 
 - Use new Mason 2.05 default file extensions in tests
