@@ -2,7 +2,7 @@ Revision history for Mason-Plugin-Cache
 
 ** denotes an incompatible change
 
-0.03  Mar 6, 2011
+0.03  Mar 7, 2011
 
 - Specify is=>'ro' explicitly; MooseX::HasDefaults only seems to transfer from base class some of the time
 
