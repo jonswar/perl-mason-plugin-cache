@@ -4,6 +4,8 @@ Revision history for Mason-Plugin-Cache
 
 0.03  Mar 6, 2011
 
+- Specify is=>'ro' explicitly; MooseX::HasDefaults only seems to transfer from base class some of the time
+
 0.02  Mar 6, 2011
 
 - Use new Mason 2.05 default file extensions in tests
