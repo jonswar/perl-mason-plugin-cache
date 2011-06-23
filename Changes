@@ -4,6 +4,8 @@ Revision history for Mason-Plugin-Cache
 
 0.04  Mar 7, 2011
 
+- Use key 'Default' if none specified in $.Cache() filter
+
 0.03  Mar 7, 2011
 
 - Specify is=>'ro' explicitly; MooseX::HasDefaults only seems to transfer from base class some of the time
