@@ -66,15 +66,29 @@ when no parameters are passed.
 
 =over
 
-=item Cache ($key, $set_options, [%cache_params])
+=item Cache ($key, $options, [%cache_params])
 
 Caches the content using C<< $self->cache >> and the supplied cache I<$key>.
-I<$set_options>, if provided, is passed as the third argument to C<<
-$self->cache->set >> - it is usually an expiration time. I<%cache_params>, if
-any, are passed to C<< $self->cache >>.
+
+I<$options> is a scalar or hash reference. If a scalar, it is treated as the
+C<expires_in> duration and passed as the third argument to C<set>. If it is a
+hash reference, it may contain name/value pairs for both C<get> and C<set>.
+
+I<%cache_params>, if any, are passed to C<< $self->cache >>.
 
     <% $.Cache($my_key, '1 hour') { %>
       <!-- this will be cached for an hour -->
+    </%>
+
+    <% $.Cache($my_key, { expire_if => sub { $.refresh } }, driver => 'RawMemory') { %>
+      <!-- this will be cached until $.refresh is true -->
+    </%>
+
+If neither I<$key> nor I<$options> are passed, the key is set to 'Default' and
+the cache never expires.
+
+    <% $.Cache() { %>
+      <!-- cache this forever, or until explicitly removed -->
     </%>
 
 =back
