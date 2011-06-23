@@ -3,7 +3,7 @@ use Test::Class::Most parent => 'Mason::Test::Class';
 
 __PACKAGE__->default_plugins( [ '@Default', 'Cache' ] );
 
-sub test_cache_defaults : Test(2) {
+sub test_cache_defaults : Tests {
     my $self = shift;
     $self->run_test_in_comp(
         path => '/cache/defaults.mc',
@@ -15,7 +15,7 @@ sub test_cache_defaults : Test(2) {
     );
 }
 
-sub test_cache_method : Test(1) {
+sub test_cache_method : Tests {
     my $self = shift;
     $self->test_comp(
         path => '/cache.mc',
@@ -48,7 +48,7 @@ foo1
     );
 }
 
-sub test_cache_filter : Test(2) {
+sub test_cache_filter : Tests {
     my $self = shift;
 
     $self->test_comp(
@@ -88,4 +88,25 @@ i = 2
 i = 3
 '
     );
+}
+
+sub test_cache_with_defer : Tests {
+    return "not yet implemented";
+
+    my $self = shift;
+
+    my $path = '/cache/defer.mc';
+    $self->add_comp(
+        path => $path,
+        src  => '
+<% $.Cache("all") { %>
+foo = <% $m->defer(sub { $Foo::foo }) %>
+% $Foo::foo++;
+<% } %>
+'
+    );
+    $Foo::foo = 5;
+    $self->test_existing_comp( path => $path, expect => 'foo = 6' );
+    $Foo::foo = 10;
+    $self->test_existing_comp( path => $path, expect => 'foo = 6' );
 }
