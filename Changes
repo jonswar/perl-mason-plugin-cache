@@ -2,6 +2,8 @@ Revision history for Mason-Plugin-Cache
 
 ** denotes an incompatible change
 
+0.05  Jun 23, 2011
+
 0.04  Jun 23, 2011
 
 - Switch to new line-based filter syntax (Mason 2.08+)
