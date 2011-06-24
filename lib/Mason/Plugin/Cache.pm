@@ -49,7 +49,7 @@ Class used to create a cache. Defaults to L<CHI|CHI>.
 
 =back
 
-=head1 COMPONENT METHODS
+=head1 COMPONENT CLASS METHODS
 
 =over
 
@@ -59,6 +59,21 @@ Returns a new cache object with the namespace set to the component's path.
 Parameters to this method, if any, are combined with L<cache_defaults> and
 passed to the L<cache_root_class> constructor.  The cache object is memoized
 when no parameters are passed.
+
+    my $result = $.cache->get('key');
+
+=back
+
+=head1 REQUEST METHODS
+
+=over
+
+=item cache
+
+Same as calling C<cache> on the current component class. This usage will be
+familiar to Mason 1 users.
+
+    my $result = $m->cache->get('key');
 
 =back
 

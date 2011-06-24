@@ -9,8 +9,10 @@ sub test_cache_defaults : Tests {
         path => '/cache/defaults.mc',
         test => sub {
             my $comp = shift;
-            is( $comp->cache->label,     'File',             'cache->label' );
-            is( $comp->cache->namespace, $comp->cmeta->path, 'cache->namespace' );
+            foreach my $cache ( $comp->cache, $comp->m->cache ) {
+                is( $cache->label,     'File',             'cache->label' );
+                is( $cache->namespace, $comp->cmeta->path, 'cache->namespace' );
+            }
         }
     );
 }
@@ -29,7 +31,7 @@ $.count => 0
 <% $.cache->compute($key, sub { $key . $.count }) %>
 </%method>
 
-namespace: <% $.cache->namespace %>
+namespace: <% $m->cache->namespace %>
 <% $.getset("foo") %>
 <% $.getset("bar") %>
 <% $.getset("bar") %>

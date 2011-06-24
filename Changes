@@ -6,6 +6,7 @@ Revision history for Mason-Plugin-Cache
 
 - Switch to new line-based filter syntax (Mason 2.08+)
 - Use key 'Default' if none specified in $.Cache() filter
+- Add $m->cache, which delegates to $class->cache for the current component class
 
 0.03  Mar 7, 2011
 
