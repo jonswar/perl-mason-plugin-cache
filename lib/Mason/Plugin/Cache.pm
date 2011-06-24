@@ -22,9 +22,9 @@ Mason::Plugin::Cache - Provide component cache object and filter
 
     ...
 
-    <% $.Cache('key2', '1 hour') { %>
+    % $.Cache('key2', '1 hour') {{
       <!-- this will be cached for an hour -->
-    </%>
+    % }}
 
 =head1 DESCRIPTION
 
@@ -76,20 +76,20 @@ hash reference, it may contain name/value pairs for both C<get> and C<set>.
 
 I<%cache_params>, if any, are passed to C<< $self->cache >>.
 
-    <% $.Cache($my_key, '1 hour') { %>
+    % $.Cache($my_key, '1 hour') {{
       <!-- this will be cached for an hour -->
-    </%>
+    % }}
 
-    <% $.Cache($my_key, { expire_if => sub { $.refresh } }, driver => 'RawMemory') { %>
+    % $.Cache($my_key, { expire_if => sub { $.refresh } }, driver => 'RawMemory') {{
       <!-- this will be cached until $.refresh is true -->
-    </%>
+    % }}
 
 If neither I<$key> nor I<$options> are passed, the key is set to 'Default' and
 the cache never expires.
 
-    <% $.Cache() { %>
+    % $.Cache() {{
       <!-- cache this forever, or until explicitly removed -->
-    </%>
+    % }}
 
 =back
 

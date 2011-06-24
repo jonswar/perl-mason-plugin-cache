@@ -55,9 +55,9 @@ sub test_cache_filter : Tests {
         src => '
 % my $i = 1;
 % foreach my $key (qw(foo bar)) {
-<% $.Repeat(3), $.Cache($key) { %>
+%   $.Repeat(3), $.Cache($key) {{
 i = <% $i++ %>
-</%>
+%   }}
 % }
 ',
         expect => '
@@ -74,9 +74,9 @@ i = 2
         src => '
 % my $i = 1;
 % foreach my $key (qw(foo foo)) {
-<% $.Cache($key), $.Repeat(3) { %>
+%   $.Cache($key), $.Repeat(3) {{
 i = <% $i++ %>
-</%>
+%   }}
 % }
 ',
         expect => '
@@ -99,10 +99,10 @@ sub test_cache_with_defer : Tests {
     $self->add_comp(
         path => $path,
         src  => '
-<% $.Cache("all") { %>
+% $.Cache("all") {{
 foo = <% $m->defer(sub { $Foo::foo }) %>
 % $Foo::foo++;
-<% } %>
+% }}
 '
     );
     $Foo::foo = 5;
