@@ -120,9 +120,9 @@ sub test_cache_memoization : Tests {
         test => sub {
             my $comp = shift;
 
-            is($comp->cache_memoized, undef, 'Cache not memoized by default');
+            is( $comp->cache_memoized, undef, 'Cache not memoized by default' );
             $comp->cache_memoized('buu!');
-            is($comp->cache_memoized, 'buu!', 'Memoization updated');
+            is( $comp->cache_memoized, 'buu!', 'Memoization updated' );
         }
     );
 
@@ -131,7 +131,7 @@ sub test_cache_memoization : Tests {
         test => sub {
             my $comp = shift;
 
-            is($comp->cache_memoized, 'buu!', 'Cache memoization works across requests');
+            is( $comp->cache_memoized, 'buu!', 'Cache memoization works across requests' );
         }
     );
 }

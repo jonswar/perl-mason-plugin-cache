@@ -15,7 +15,9 @@
 ^inc/\.author
 ^localcpan
 ^misc
+^perlcriticrc
 ^release
+^tidyall.ini
 ^tmp
 ^weaver.ini
 ^wiki
