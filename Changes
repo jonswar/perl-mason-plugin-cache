@@ -2,7 +2,7 @@ Revision history for Mason-Plugin-Cache
 
 ** denotes an incompatible change
 
-0.05  Jun 23, 2011
+0.05  Oct 29, 2012
 
 - Make sure cache memoization works across requests - perl-mason-plugin-cache/pull/1
   (Pedro Melo)
